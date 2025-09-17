@@ -31,9 +31,10 @@ res();
 
 function delayMessage(message, delay) {
   // outer fn
+  let userName = 'Gagan';
   setTimeout(function () {
     // inner fn
-    console.log(message); // executed after 2 seconds
+    console.log(`${userName} : ${message}`); // executed after 2 seconds
   }, delay);
 
   console.log("outer fn executed"); // executed first
