@@ -24,7 +24,8 @@ b();
 // function (){ console.log('anonymous') } // this gives syntax error
 
 //* Named Function Expression
-
+// * This function acts like any other variable in JS
+// * we can use var/let/const (recommended const & let)
 let c = function abc(){
     console.log('b called');
 }
@@ -93,5 +94,46 @@ bd(xyz); // same thing as prev code
 var ef = function (param1) {
   return function () {};
 };
-console.log(ef()); //we log the entire fun within b.
+console.log(ef()); //we log the entire function() within b.
+
+
+
+
+// * Experimentation
+
+let abc = function(){
+  console.log('abc');
+};
+
+let def = function(){
+  console.log('def');
+};
+
+// abc();
+// def();
+
+let sumFn = abc + def;
+console.log(sumFn);
+console.log(typeof(sumFn)); // string
+
+
+let sumFn_outcome = abc() + def(); // this will execute both functions()
+console.log(sumFn_outcome); // NaN
+console.log(typeof(sumFn_outcome)); // number 
+
+
+
+//* Arrow functions " () => {} "
+
+let arrow_fn1 = () => console.log('single statement arrow fn');
+
+arrow_fn1();
+
+const arrow_fn2 = () => {
+  const date = new Date().toDateString();
+  console.log(date);
+  console.log('multi statement arrow fn');
+};
+
+arrow_fn2();
 

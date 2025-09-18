@@ -4,3 +4,9 @@
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+button{
+ background-color: white;
+ color: gray;
+ border-radius: 10px;
+ border: solid 3px gray    
+}
