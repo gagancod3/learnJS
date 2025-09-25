@@ -1,0 +1,76 @@
+# JS Engine:
+
+* JRE - Javascript Runtime Environment
+
+* JS runs literally everywhere from smart watch to robots to browsers because of Javascript Runtime Environment (JRE).
+
+* JRE is like a big container which has everything which are required to run Javascript code.
+
+* JRE consists of a JS Engine (❤️ of JRE), set of APIs to connect with outside environment, event loop, Callback queue, Microtask queue etc.
+
+* Browser can execute javascript code because it has the Javascript Runtime Environment.
+
+* Javascript Engine is not a machine. Its software written in low level languages (eg. C++) that takes in hi-level code in JS and spits out low level machine code.
+ 
+------------------------------------------------------------------------------------------------------------------------------------
+* CODE -> Parsing (AST) -> (Interpretter/Compiler)Compilation -> Execution
+
+Parsing - 
+Code is broken down into tokens. In "let a = 7" -> let, a, =, 7 are all tokens. Also we have a syntax parser that takes code and converts it into an AST (Abstract Syntax Tree)
+which is a JSON with all key values like type, start, end, body etc (looks like package.json but for a line of code in JS. Kinda unimportant)
+
+Compilation - 
+JS has something called Just-in-time(JIT) Compilation - uses both interpreter & compiler. Also compilation and execution both go hand in hand. 
+The AST from previous step goes to interpreter which converts hi-level code to byte code and moves to execeution. While interpreting, compiler 
+also works hand in hand to compile and form optimized code during runtime.
+
+Execution - 
+Needs 2 components ie. Memory heap(place where all memory is stored) and Call Stack(same call stack from prev episodes). There is also a garbage collector. 
+It uses an algo called Mark and Sweep.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+* Interpretter -
+
+> An interpreter executes code line by line at runtime.
+
+> It reads, interprets, and executes each statement immediately.
+
+> Advantage: errors are detected immediately, and you can run code interactively.
+
+> Disadvantage: slower execution for large programs, because it parses and executes code at runtime.
+
+
+* Compiler -
+
+> A compiler translates the entire source code into machine code or intermediate code before execution.
+
+> The output can be executed later without parsing the source again.
+
+> Advantage: faster execution because the code is pre-translated.
+
+> Disadvantage: compilation takes time upfront; errors are reported only after compilation.
+
+Traditionally, JavaScript was considered interpreted, 
+because it ran in the browser line by line via an interpreter.
+
+Modern Javascript engines like V8 in chrome/Node.js use a combination of interpreter and Just in time compiler.
+
+* JIT in compiler -
+
+> Just-In-Time (JIT) compilation is a technique where JavaScript code is compiled into optimized machine code at runtime, 
+rather than before execution (like traditional compilation).
+
+> It’s called “just-in-time” because the compilation happens while the program is running, based on the code that is actually executed.
+
+> This allows the engine to optimize performance dynamically.
+
+
+* Just in time (JIT) Compilation 
+
+> 
+
+
+* Garbage Collector (Mark & sweep algorithm)
+
+

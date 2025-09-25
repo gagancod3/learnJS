@@ -1,0 +1,55 @@
+//  EVENT LOOPS
+
+// Theoritical topic
+
+/*
+
+Event Loop -
+
+JavaScript has a single-threaded execution model, meaning it can execute only one piece of code at a time.
+
+However, JavaScript can handle asynchronous operations (like timers, HTTP requests, or events) using the event loop.
+
+Key Components:
+
+*Call Stack - 
+JS keeps track of function execution
+
+*Web APIs - 
+Timers, HTTP requests, DOM events live here
+they execute outside the call stack & notify js when they're ready
+
+*Callback Queue - (aka 'macro-task queue') -
+Holds callbacks (setTimeout, setInterval, DOM events) waiting to be executed
+
+*Micro-task Queue - 
+Holds microtasks like 'promise' callback
+they've higher priority than macro-tasks i.e. event loop clears all micro-tasks before moving to next macro-task
+
+*Event Loop -
+Continuously checks if the call stack is empty
+if empty, it takes the next task from queue & pushes it onto the stack
+
+
+----------------------------
+
+Call Stack       -> function executions
+Web API          -> async operations (timer, network)
+Task Queue       -> callbacks (macro-task)
+Microtask Queue  -> promise.then, queueMicrotask
+Event Loop       -> constantly checking stack & queues
+
+
+*Callback Queue gets chance to execute once all microtask queue tasks are executed
+
+*Starvation in event loop -
+Starvation happens when some tasks in the task queue never get a chance to execute because higher-priority tasks keep running continuously.
+
+In JavaScript, this usually happens when:
+
+The microtask queue (Promises, queueMicrotask, MutationObserver) keeps filling faster than it can be drained.
+
+This prevents macro-tasks (like setTimeout, DOM events, I/O callbacks) from executing.
+
+
+*/
